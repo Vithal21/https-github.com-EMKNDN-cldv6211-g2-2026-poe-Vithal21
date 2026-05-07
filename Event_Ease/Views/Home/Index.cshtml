@@ -1,0 +1,44 @@
+﻿<div class="hero">
+    <div class="hero-content">
+        <h1>Event_Ease 🎉</h1>
+        <p>Plan. Book. Enjoy your events effortlessly.</p>
+
+        <a class="btn btn-primary btn-lg m-2" asp-controller="Events" asp-action="Index">
+            Explore Events
+        </a>
+
+        <a class="btn btn-gold btn-lg m-2" asp-controller="Bookings" asp-action="Index">
+            Manage Bookings
+        </a>
+    </div>
+</div>
+
+<div class="container mt-5">
+    <div class="row text-center">
+
+        <div class="col-md-4">
+            <div class="card shadow p-3">
+                <h3>🎯 Events</h3>
+                <p>Create and manage events easily.</p>
+                <a class="btn btn-primary" asp-controller="Events" asp-action="Index">Go</a>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow p-3">
+                <h3>📅 Bookings</h3>
+                <p>Book your spot in seconds.</p>
+                <a class="btn btn-primary" asp-controller="Bookings" asp-action="Index">Go</a>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow p-3">
+                <h3>🏟 Venues</h3>
+                <p>Find the perfect venue.</p>
+                <a class="btn btn-primary" asp-controller="Venues" asp-action="Index">Go</a>
+            </div>
+        </div>
+
+    </div>
+</div>

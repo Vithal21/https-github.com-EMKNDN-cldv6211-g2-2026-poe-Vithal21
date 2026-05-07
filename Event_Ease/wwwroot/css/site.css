@@ -1,0 +1,154 @@
+/* =========================
+   EVENT_EASE THEME
+   Royal Blue & Gold
+========================= */
+
+/* General page styling */
+body {
+    background-color: #f5f7fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #0a1f44 !important;
+}
+
+.navbar-brand {
+    color: gold !important;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.navbar-nav .nav-link {
+    color: gold !important;
+    margin-right: 15px;
+}
+
+    .navbar-nav .nav-link:hover {
+        color: #ffffff !important;
+    }
+
+/* Headings */
+h1, h2, h3, h4 {
+    color: #0a1f44;
+    font-weight: bold;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: #0a1f44;
+    border-color: #0a1f44;
+    border-radius: 6px;
+    padding: 8px 16px;
+}
+
+    .btn-primary:hover {
+        background-color: #142d63;
+    }
+
+.btn-danger {
+    background-color: #c9a227;
+    border-color: #c9a227;
+    color: black;
+}
+
+    .btn-danger:hover {
+        background-color: #a8891f;
+    }
+
+/* Tables */
+table {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+    table th {
+        background-color: #0a1f44;
+        color: gold;
+        text-align: center;
+    }
+
+    table td {
+        text-align: center;
+    }
+
+/* Forms */
+input, select {
+    border-radius: 5px !important;
+    border: 1px solid #ccc;
+    padding: 6px;
+}
+
+    input:focus, select:focus {
+        border-color: #0a1f44;
+        box-shadow: 0 0 5px rgba(10, 31, 68, 0.5);
+    }
+
+/* Cards / Containers */
+.container {
+    margin-top: 20px;
+}
+
+/* Images */
+img {
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+/* Footer */
+footer {
+    background-color: #0a1f44;
+    color: gold;
+    text-align: center;
+    padding: 10px;
+    margin-top: 30px;
+}
+/* HERO SECTION */
+.hero {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-content {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.hero h1 {
+    font-size: 60px;
+}
+
+.hero p {
+    font-size: 20px;
+}
+
+/* GOLD BUTTON */
+.btn-gold {
+    background-color: gold;
+    border-color: gold;
+    color: black;
+}
+
+    .btn-gold:hover {
+        background-color: #d4af37;
+    }
+
+/* CARDS */
+.card {
+    border: none;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+    .card:hover {
+        transform: scale(1.05);
+    }

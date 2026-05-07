@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Event_Ease.Models.Event>
+
+@{
+    ViewData["Title"] = "Venue Events";
+}
+
+<h1>Events At Venue</h1>
+
+<hr />
+
+<div class="row">
+
+    @foreach (var item in Model)
+    {
+        <div class="col-md-4 mb-4">
+
+            <div class="card">
+
+                @if (!string.IsNullOrEmpty(item.ImageUrl))
+                {
+                    <img src="@item.ImageUrl"
+                         class="card-img-top"
+                         style="height:200px; object-fit:cover;" />
+                }
+
+                <div class="card-body">
+
+                    <h5 class="card-title">
+                        @item.EventName
+                    </h5>
+
+                    <p>
+                        <strong>Venue:</strong>
+                        @item.Venue?.VenueName
+                    </p>
+
+                    <p>
+                        <strong>Start:</strong>
+                        @item.StartDate
+                    </p>
+
+                    <p>
+                        <strong>End:</strong>
+                        @item.EndDate
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+    }
+
+</div>
