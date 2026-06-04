@@ -1,0 +1,88 @@
+# EventEase Cloud Migration
+
+## Student Details
+
+Name: Dhanusha Ramthoola
+Student Number: [Your Student Number]
+
+## Project Description
+
+EventEase is an ASP.NET Core MVC web application used to manage events, venues and event types.
+
+The application has been migrated from Local SQL Server to Microsoft Azure SQL Database.
+
+## Technologies Used
+
+- ASP.NET Core MVC
+- Entity Framework Core
+- Azure SQL Database
+- Azure Resource Groups
+- Azure SQL Server
+- Azure Portal
+- Visual Studio 2022
+
+## Azure Resources
+
+Resource Group:
+EventEaseRG
+
+SQL Server:
+eventease-vithal
+
+Database:
+EventEaseRG
+
+Region:
+South Africa North
+
+## Setup Instructions
+
+1. Clone repository.
+2. Open solution in Visual Studio.
+3. Update connection string in appsettings.json.
+4. Run:
+
+```powershell
+Update-Database
+
+
+---
+
+## 5. Video Demonstration Checklist
+
+Record a 5–10 minute video showing:
+
+### Introduction
+- Name
+- Student Number
+- Project Name
+
+### Azure Portal
+- Resource Group
+- SQL Server
+- SQL Database
+
+### Visual Studio
+- appsettings.json
+- Program.cs
+- Successful migration
+
+### Application Demo
+
+Create:
+- Venue
+- Event Type
+- Event
+
+Show:
+- Data saved successfully
+- Data visible in Azure SQL
+
+### Query Editor
+
+Run:
+
+```sql
+SELECT * FROM Venues;
+SELECT * FROM EventTypes;
+SELECT * FROM Events;
