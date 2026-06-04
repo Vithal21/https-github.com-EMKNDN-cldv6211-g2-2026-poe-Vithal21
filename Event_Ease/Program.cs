@@ -7,14 +7,15 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+// SQL Database
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(
         builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// AZURE BLOB STORAGE
+// Azure Blob Storage
 builder.Services.AddSingleton(x =>
     new BlobServiceClient(
-        "UseDevelopmentStorage=true"));
+        builder.Configuration.GetConnectionString("AzureBlobStorage")));
 
 var app = builder.Build();
 

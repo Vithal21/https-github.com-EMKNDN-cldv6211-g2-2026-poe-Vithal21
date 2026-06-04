@@ -16,9 +16,44 @@ namespace Event_Ease.Controllers
         }
 
         // GET: Bookings
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(
+     int? eventTypeId,
+     DateTime? startDate,
+     DateTime? endDate)
         {
-            var bookings = _context.Bookings.Include(b => b.Event);
+            var bookings = _context.Bookings
+                .Include(b => b.Event)
+                .ThenInclude(e => e.EventType)
+                .Include(b => b.Event)
+                .ThenInclude(e => e.Venue)
+                .AsQueryable();
+
+            if (eventTypeId.HasValue)
+            {
+                bookings = bookings.Where(b =>
+                    b.Event != null &&
+                    b.Event.EventTypeId == eventTypeId);
+            }
+
+            if (startDate.HasValue)
+            {
+                bookings = bookings.Where(b =>
+                    b.Event != null &&
+                    b.Event.StartDate >= startDate);
+            }
+
+            if (endDate.HasValue)
+            {
+                bookings = bookings.Where(b =>
+                    b.Event != null &&
+                    b.Event.EndDate <= endDate);
+            }
+
+            ViewBag.EventTypes = new SelectList(
+                _context.EventTypes,
+                "EventTypeId",
+                "TypeName");
+
             return View(await bookings.ToListAsync());
         }
 

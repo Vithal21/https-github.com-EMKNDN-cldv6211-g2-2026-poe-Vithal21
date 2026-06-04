@@ -22,7 +22,9 @@ namespace Event_Ease.Controllers
         // GET: Events
         public async Task<IActionResult> Index()
         {
-            var events = _context.Events.Include(e => e.Venue);
+            var events = _context.Events
+    .Include(e => e.Venue)
+    .Include(e => e.EventType);
             return View(await events.ToListAsync());
         }
 
@@ -33,6 +35,11 @@ namespace Event_Ease.Controllers
                 _context.Venues,
                 "VenueId",
                 "VenueName");
+
+            ViewData["EventTypeId"] = new SelectList(
+                _context.EventTypes,
+                "EventTypeId",
+                "TypeName");
 
             return View();
         }
@@ -75,10 +82,16 @@ namespace Event_Ease.Controllers
             }
 
             ViewData["VenueId"] = new SelectList(
-                _context.Venues,
-                "VenueId",
-                "VenueName",
-                events.VenueId);
+     _context.Venues,
+     "VenueId",
+     "VenueName",
+     events.VenueId);
+
+            ViewData["EventTypeId"] = new SelectList(
+                _context.EventTypes,
+                "EventTypeId",
+                "TypeName",
+                events.EventTypeId);
 
             return View(events);
         }

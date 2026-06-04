@@ -4,6 +4,7 @@ using Event_Ease.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Event_Ease.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260604104738_AddEventType")]
+    partial class AddEventType
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -99,33 +102,6 @@ namespace Event_Ease.Migrations
                     b.HasKey("EventTypeId");
 
                     b.ToTable("EventTypes");
-
-                    b.HasData(
-                        new
-                        {
-                            EventTypeId = 1,
-                            TypeName = "Wedding"
-                        },
-                        new
-                        {
-                            EventTypeId = 2,
-                            TypeName = "Conference"
-                        },
-                        new
-                        {
-                            EventTypeId = 3,
-                            TypeName = "Birthday"
-                        },
-                        new
-                        {
-                            EventTypeId = 4,
-                            TypeName = "Corporate"
-                        },
-                        new
-                        {
-                            EventTypeId = 5,
-                            TypeName = "Concert"
-                        });
                 });
 
             modelBuilder.Entity("Event_Ease.Models.Venue", b =>

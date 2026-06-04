@@ -21,5 +21,10 @@ namespace Event_Ease.Models
 
         [ForeignKey("VenueId")]
         public Venue? Venue { get; set; }
+
+        public int? EventTypeId { get; set; }
+
+        [ForeignKey("EventTypeId")]
+        public EventType? EventType { get; set; }
     }
 }
